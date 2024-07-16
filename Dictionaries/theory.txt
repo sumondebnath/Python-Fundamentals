@@ -1,0 +1,53 @@
+1. what is dictionary?
+Ans: dictionaries are mutable data structures that allow you to store key-value pairs. Dictionary can be created using the dict() constructor or curly braces' {}'.
+
+2. Dictionary's Operations?
+Ans: Once you have created a dictionary, you can add, remove, or update elements using the methods dict.
+ ----------------------------------------------------------------------------------------------------------------------------------------------------
+ |   ** Methods **      |    ** Definations **                                                                                                      |
+ ----------------------------------------------------------------------------------------------------------------------------------------------------
+    * update()              Updates the specified key-value pairs in dictionary
+
+    * clear()               Removes all the elements from the dictionary
+
+    * copy()                Returns a copy of the dictionary
+
+    * pop()                 Removes the element with the specified key
+
+    * get()                 Returns specified key value
+
+    * items()               Returns an index having a tuple for every key-value pair
+
+    * keys()                Returns a list containing the dictionary's keys
+
+    * popitem()             Remove last inserted key-value pair
+
+    * setdefault()          Returns specified key value. If a key value does not exist: insert the specified value of key
+
+    * fromkeys()            Returns specified keys and values in dictionary
+
+    * values()              Returns values lists in the dictionary
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+        ** Dictionary Built-in Functions **
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Ans: Dictionaries have several built-in functions that allow you to perform various operations on them. 
+
+    ** all()        
+        The all() function in the python dictionary checks if all the keys in the dictionary have True as their values. If all the values are True,     then it returns True. Otherwise, it returns False. 
+
+    ** any()
+        The any() function on python dict checks if any of the values in the dict are True. If any of the values are True, it returns True, otherwise, it returns False.
+
+    **len(),
+        It is a built-in function that returns the length of an object. It can be used on various objects such as strings, lists, dictionaries, etc.
+
+    **cmp(), 
+        The cmp() function is used to compare two dictionaries by key. The function gives a negative value if the first dictionary is lesser than the second dictionary, a positive value if the first dictionary is greater than the second dictionary, and 0 if the two dictionaries are equal.
+    
+    **sorted(),
+        This function is used to sort a dictionary in Python. The function takes two arguments: the dictionary to be sorted and the key on which the sorting will be based. The key can be a function, a list, or a tuple. The function returns a list of tuples, with each tuple consisting of the key and the value.
+
+        etc. are the most common dictionaries functions.
