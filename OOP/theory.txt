@@ -1,0 +1,5 @@
+
+*** OOP : Object Oriented Programming.
+
+OOP : Atributes-> has,
+      Methodes-> Does

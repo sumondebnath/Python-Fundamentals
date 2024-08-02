@@ -1,0 +1,6 @@
+
+1. Scope
+
+
+2. Global Scope:
+    Ans : Global variables can use, access and also modify, But programmers can not modify Global variables. 

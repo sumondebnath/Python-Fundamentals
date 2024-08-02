@@ -23,8 +23,12 @@ for dic in dictionary["dic1"]:
 
 print(dictionary["dic2"])
 
+
 for key, val in dictionary["dic2"].items():
-    print(key, val)
+    # print(key, val)
+    print(dictionary["dic2"][key])
+
+
 
 print(dictionary["dic3"])
 

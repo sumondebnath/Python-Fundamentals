@@ -1,0 +1,7 @@
+
+*** In python, there is no Block Scope.
+
+
+*** SumonDebnath ->(Pascal Case)
+*** sumonDebnath ->(camel Case)
+*** sumon_debnath ->(snake_case)
