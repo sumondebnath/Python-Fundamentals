@@ -5,6 +5,7 @@ timmy = Turtle()
 
 timmy.shape("turtle")
 # timmy.shapesize(2)
+
 for i in range(10):
     timmy.color("green")
     timmy.forward(360)
