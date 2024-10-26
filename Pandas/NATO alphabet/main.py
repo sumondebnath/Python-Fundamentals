@@ -12,7 +12,18 @@ phonetic_dict = {row.letter: row.code for (index, row) in data.iterrows()}
 # print(phonetic_dict)
 
 
+def genarate_phonetic():
+    word = input("Enter a word: ").upper()
+    try:
+        output_list = [phonetic_dict[letter] for letter in word]
 
-word = input("Enter a word: ").upper()
-output_list = [phonetic_dict[letter] for letter in word]
-print(output_list)
+    except KeyError:
+        print("Sorry, Only letters in the alphabets please!")
+        genarate_phonetic()
+
+    else:
+        print(output_list)
+
+
+
+genarate_phonetic()
