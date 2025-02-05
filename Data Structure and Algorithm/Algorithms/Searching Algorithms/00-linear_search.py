@@ -16,11 +16,11 @@ if __name__ == "__main__":
     # lst = [10, 11, 12, 15, 16, 18, 19, 20, 25, 30]
     # x = 20
 
-    n = int(input())
+    n = int(input("Enter The N: "))
     lst = []
     for i in range(0, n):
         ele = int(input())
         lst.append(ele)
-    x = int(input())
+    x = int(input("Enter The Searching Element: "))
 
     print(Linear_Search(lst, x))
