@@ -2,6 +2,8 @@
 
 def add(*args):
     print(args[1])
+    print(args)
+    print(type(args))
 
     sum = 0
     for n in args:
