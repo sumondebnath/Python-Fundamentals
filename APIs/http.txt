@@ -1,0 +1,84 @@
+1×× Informational
+Code ----------------------------------- Meaning -------------------------------------------------------SEO / Use Case
+100 Continue	    Request received, client should proceed.	                                    Rarely used in SEO.
+101 Switching       Protocols	Server switching per request.	                                    No SEO impact.
+102 Processing	    Server received the request and continues processing; no final response yet.	Used for long operations (WebDAV); no SEO impact.
+
+
+2×× Success
+Code ------------------------------------- Meaning -------------------------------------------------------SEO / Use Case
+200 Ok	                            Request succeeded.	                                        Standard response crawlers need.
+201 Created	                        Resource created (often POST).	                            API/creation success; not crawl-related.
+202 Accepted	                    Request received, processing pending.	                    Async ops; no SEO effect.
+203 Non-Authoritative Information	Response from transforming proxy.	                        Rare; no SEO value.
+204 No Content	                    Success, no response body.	                                Useful for APIs.
+205 Reset Content	                Client should reset the form.	                            Not SEO-relevant.
+206 Partial Content	                Server delivered partial range.	                            Used in media/large files; no SEO use.
+207 Multi-Status	                Multiple status codes for WebDAV.	                        Not SEO-relevant.
+208 Already Reported	            WebDAV code; avoids repeats.	                            Not SEO-relevant.
+226 IM Used	                        Server applied delta encoding.	                            Rare; not SEO-related.
+
+
+3×× Redirection
+Code-------------------------------------------	Meaning-------------------------------------------------------	SEO / Use Case
+300 Multiple Choices	            Several options for resource.	                            May confuse crawlers; avoid.
+301 Moved Permanently	            Resource permanently redirected.	                        SEO-friendly redirect.
+302 Found	                        Temporary redirect.	                                        Avoid long-term SEO; use 301.
+303 See Other	                    Directs client to another URI (GET).	                    Used in form submissions.
+304 Not Modified	                Client can use cached version.	                            Helps reduce crawl load.
+305 Use Proxy	                    Must access via proxy.	                                    Deprecated; ignore.
+307 Temporary Redirect	            Same as 302, but method preserved.	                        For temp moves; no long-term SEO.
+308 Permanent Redirect	            Same as 301 but method preserved.	                        Good SEO alternative to 301.
+
+
+
+4×× Client Error
+Code-----------------------------------------	Meaning	---------------------------------------------------------SEO / Use Case
+400 Bad Request	                    Invalid request syntax.	                                    Check logs; fix malformed URLs.
+401 Unauthorized	                Authentication required.	                                May block crawlers unintentionally.
+402 Payment Required	            Reserved for future use.	                                Not SEO-relevant.
+403 Forbidden	                    Server refused request.	                                    Ensure important pages aren’t restricted
+404 Not Found	                    Page not found.	Redirect or customize the page.             Redirects explained. 
+405 Method Not Allowed	            Request method not permitted.	                            Rare; check API endpoints.
+406 Not Acceptable	                Resource can’t return requested format.	                    Rare; not SEO-focused.
+407 Proxy Authentication Required	Client must authenticate proxy.	                            Not SEO-relevant.
+408 Request Timeout	                Server timed out waiting for request.	                    Could disrupt crawlers.
+409 Conflict	                    Request conflict (e.g., edit conflicts).	                Web apps; not SEO.
+410 Gone	                        Resource intentionally removed.	                            Tells search engines page is gone.
+411 Length Required	                Missing Content-Length.	                                    Rare; not SEO.
+412 Precondition Failed	            Conditions not met.	                                        API/webdav use.
+413 Payload Too Large	            Request entity too large.	                                Rare; no SEO.
+414 Request-URI Too Long	        URL exceeds max length.	                                    Avoid overly long URLs in SEO.
+415 Unsupported Media Type	        Server refuses type.	                                    No SEO impact.
+416 Requested Range Not Satisfiable	Invalid range header.	                                    No SEO impact.
+417 Expectation Failed	Server can’t meet Expect header.	                                    Rare.
+418 I’m a Teapot	Joke code (RFC 2324).	None.
+421 Misdirected Request	Request to wrong server.	CDN issues.
+422 Unprocessable Entity	Semantic errors in request.	WebDAV; not SEO.
+423 Locked	Resource locked.	WebDAV.
+424 Failed Dependency	Request failed due to dependency.	WebDAV.
+426 Upgrade Required	Client must switch protocols.	Not SEO.
+428 Precondition Required	Server requires conditions.	Rare.
+429 Too Many Requests	Rate-limited.	May block bots.
+431 Request Header Fields Too Large	Headers too big.	Could block crawlers.
+444 Connection Closed Without Response	Server drops the connection without sending a response (nginx). Often used to terminate unwanted or suspicious requests.	Treat as a network error. Audit WAF/CDN rules to avoid false positives that block crawlers. Monitor error rates and server logs
+451 Unavailable for Legal Reasons	The server denies access to the resource due to legal demands (e.g., DMCA, government restrictions).	May cause content to disappear from search results; signals deliberate removal.
+499 Client Closed Request	Client closes the connection before the server sends a response (nginx).	Investigate long TTFB, client timeouts, and CDN/proxy disconnects. Crawlers log a fetch failure; reduce latency and stabilize origin performance.
+
+
+
+
+5×× Server Error
+Code	Meaning	SEO / Use Case
+500 Internal Server Error	Generic server error.	Fix immediately; harms SEO.
+501 Not Implemented	Server lacks functionality.	Rare.
+502 Bad Gateway	Invalid response from upstream.	Check hosting/CDN.
+503 Service Unavailable	Server overloaded or down.	Use for planned downtime.
+504 Gateway Timeout	Upstream didn’t respond.	Hosting/CDN issues.
+505 HTTP Version Not Supported	Version not supported.	Rare.
+506 Variant Also Negotiates	Config error in content negotiation.	Rare.
+507 Insufficient Storage	Server out of storage (WebDAV).	Not SEO.
+508 Loop Detected	Infinite loop in request.	WebDAV.
+510 Not Extended	Extensions required.	Rare.
+511 Network Authentication Required	Network login required.	Not SEO impact
+599 Network Connect Timeout Error	Network timeout not covered by 504; used by HAProxy, some CDNs.	Signals upstream instability. Monitor hosting/CDN; prolonged use may impact crawl reliability.
